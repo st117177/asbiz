@@ -39,6 +39,14 @@ DETAILED = (
 - другое: всё остальное; при сомнении выбирай «другое»."""
 )
 
+WITH_EXAMPLES = DETAILED + """
+Примеры:
+Обращение: «Какой процент комиссии при выводе выручки раз в неделю?»
+Ответ: тарифы
+Обращение: «Сервер перестал получать webhook после обновления SDK».
+Ответ: интеграция
+"""
+
 # Рассуждение. max_tokens кандидата должен быть больше budget_tokens
 THINKING = {"thinking": {"type": "enabled", "budget_tokens": 1024}}
 
@@ -58,6 +66,7 @@ CANDIDATES = [
     Candidate("короткая постановка", SHORT),
     Candidate("постановка с правилами", DETAILED),
     Candidate("правила + рассуждение", DETAILED, body=THINKING, max_tokens=2048),
+    Candidate("правила + два примера", WITH_EXAMPLES),
 ]
 
 
@@ -143,17 +152,23 @@ def summarize(
     per = lambda value: value / max(1, len(done))
     latencies = [r.latency_s for r in done]
     ttfts = [r.ttft_s for r in done if r.ttft_s is not None]
+    accuracy = sum(r.ok for r in rows) / max(1, len(rows))
+    month = flow_per_day * 30
+    error_cost = month * (1 - accuracy) * 2 * 10
     return {
         "кандидат": name,
-        "точность": sum(r.ok for r in rows) / max(1, len(rows)),
+        "точность": accuracy,
         "p50, с": percentile(latencies, 0.5),
         "p95, с": percentile(latencies, 0.95),
         "первый токен p50, с": percentile(ttfts, 0.5),
+        "входных на обращение": per(total.input_tokens + total.cache_read_tokens + total.cache_write_tokens),
         "токенов на обращение": per(total.total_tokens),
         "взвешенных на обращение": per(total.weighted),
         "цена за 1000, у.е.": 1000 * per(total.cost),
         "взвешенных в месяц, млн": per(total.weighted) * flow_per_day * 30 / 1e6,
-        "цена в месяц, у.е.": per(total.cost) * flow_per_day * 30,
+        "цена в месяц, у.е.": per(total.cost) * month,
+        "ошибки в месяц, у.е.": error_cost,
+        "всего с ошибками, у.е.": per(total.cost) * month + error_cost,
         "обрезано": sum(r.truncated for r in done),
         "сбоев": len(rows) - len(done),
     }
@@ -210,3 +225,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

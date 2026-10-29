@@ -1,0 +1,35 @@
+SAVED response 06_short_repeat2 weighted total: 31919
+SAVED response 06_short_repeat2 weighted total: 31991
+SAVED response 06_short_repeat2 weighted total: 32068
+SAVED response 06_short_repeat2 weighted total: 32149
+SAVED response 06_short_repeat2 weighted total: 32235
+SAVED response 06_short_repeat2 weighted total: 32320
+SAVED response 06_short_repeat2 weighted total: 32394
+SAVED response 06_short_repeat2 weighted total: 32461
+SAVED response 06_short_repeat2 weighted total: 32525
+SAVED response 06_short_repeat2 weighted total: 32599
+SAVED response 06_short_repeat2 weighted total: 32673
+SAVED response 06_short_repeat2 weighted total: 32760
+SAVED response 06_short_repeat2 weighted total: 32838
+SAVED response 06_short_repeat2 weighted total: 32903
+SAVED response 06_short_repeat2 weighted total: 32982
+SAVED response 06_short_repeat2 weighted total: 33048
+SAVED response 06_short_repeat2 weighted total: 33125
+SAVED response 06_short_repeat2 weighted total: 33208
+SAVED response 06_short_repeat2 weighted total: 33288
+SAVED response 06_short_repeat2 weighted total: 33374
+SAVED response 06_short_repeat2 weighted total: 33452
+SAVED response 06_short_repeat2 weighted total: 33528
+SAVED response 06_short_repeat2 weighted total: 33605
+SAVED response 06_short_repeat2 weighted total: 33689
+SAVED response 06_short_repeat2 weighted total: 33767
+SAVED response 06_short_repeat2 weighted total: 33830
+SAVED response 06_short_repeat2 weighted total: 33908
+SAVED response 06_short_repeat2 weighted total: 33991
+SAVED response 06_short_repeat2 weighted total: 34060
+SAVED response 06_short_repeat2 weighted total: 34140
+| кандидат | точность | p50, с | p95, с | первый токен p50, с | входных на обращение | токенов на обращение | взвешенных на обращение | цена за 1000, у.е. | взвешенных в месяц, млн | цена в месяц, у.е. | ошибки в месяц, у.е. | всего с ошибками, у.е. | обрезано | сбоев |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| короткая постановка | 0.833 | 1.151 | 1.456 | 1.078 | 73.300 | 76.200 | 76.200 | 0.017 | 114.300 | 25.470 | 5000000.000 | 5000025.470 | 0 | 0 |
+
+Модель deepseek-flash, обращений 30, прогноз на 50000 обращений в день. Время замера 183 с, потрачено взвешенных токенов: 2286.

@@ -1,0 +1,67 @@
+1. Обычный запрос: весь ответ как есть
+
+SAVED response 01_raw_request weighted total: 72
+{
+  "id": "d8a589ee-5895-47d0-b183-3a1dc0c15263",
+  "type": "message",
+  "role": "assistant",
+  "model": "deepseek-flash",
+  "content": [
+    {
+      "type": "text",
+      "text": "платежи"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "usage": {
+    "input_tokens": 69,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 3,
+    "service_tier": "standard"
+  }
+}
+
+2. Ответ, оборванный лимитом max_tokens=2
+
+SAVED response 01_raw_request weighted total: 91
+stop_reason: max_tokens, текст: 'Небо'
+
+3. Токены русского и английского текста с одним смыслом
+
+SAVED response 01_raw_request weighted total: 120
+SAVED response 01_raw_request weighted total: 144
+по-русски  28, по-английски  23, отношение 1.22
+SAVED response 01_raw_request weighted total: 167
+SAVED response 01_raw_request weighted total: 182
+по-русски  22, по-английски  14, отношение 1.57
+
+4. Разброс ответов: пять одинаковых запросов при температуре 0 и 1
+
+SAVED response 01_raw_request weighted total: 208
+SAVED response 01_raw_request weighted total: 234
+SAVED response 01_raw_request weighted total: 260
+SAVED response 01_raw_request weighted total: 286
+SAVED response 01_raw_request weighted total: 312
+температура 0.0: различных ответов 1 из 5: ['хорошая', 'хорошая', 'хорошая', 'хорошая', 'хорошая']
+SAVED response 01_raw_request weighted total: 338
+SAVED response 01_raw_request weighted total: 364
+SAVED response 01_raw_request weighted total: 390
+SAVED response 01_raw_request weighted total: 416
+SAVED response 01_raw_request weighted total: 442
+температура 1.0: различных ответов 1 из 5: ['хорошая', 'хорошая', 'хорошая', 'хорошая', 'хорошая']
+
+5. Сервер не хранит диалог
+
+SAVED response 01_raw_request weighted total: 481
+SAVED response 01_raw_request weighted total: 513
+SAVED response 01_raw_request weighted total: 570
+без истории: 'Извините, я не знаю вашего имени — вы его не сооб', входных токенов 16
+с историей:  'Аня', входных токенов 55
+
+6. Что будет, если модель начнёт рассуждать, а места мало
+
+SAVED response 01_raw_request weighted total: 680
+блоки ответа: ['thinking'], причина остановки: max_tokens, текст: '', выходных токенов 16
+Поэтому в проекте рассуждение выключено добавкой из .env, а кандидат с рассуждением в замере получает max_tokens больше бюджета рассуждения.

@@ -1,0 +1,22 @@
+SAVED response 03_smoke_n5 weighted total: 4973
+SAVED response 03_smoke_n5 weighted total: 5045
+SAVED response 03_smoke_n5 weighted total: 5126
+SAVED response 03_smoke_n5 weighted total: 5191
+SAVED response 03_smoke_n5 weighted total: 5277
+SAVED response 03_smoke_n5 weighted total: 5487
+SAVED response 03_smoke_n5 weighted total: 5704
+SAVED response 03_smoke_n5 weighted total: 5926
+SAVED response 03_smoke_n5 weighted total: 6152
+SAVED response 03_smoke_n5 weighted total: 6383
+SAVED response 03_smoke_n5 weighted total: 6670
+SAVED response 03_smoke_n5 weighted total: 6953
+SAVED response 03_smoke_n5 weighted total: 7308
+SAVED response 03_smoke_n5 weighted total: 7849
+SAVED response 03_smoke_n5 weighted total: 8151
+| кандидат | точность | p50, с | p95, с | первый токен p50, с | входных на обращение | токенов на обращение | взвешенных на обращение | цена за 1000, у.е. | взвешенных в месяц, млн | цена в месяц, у.е. | ошибки в месяц, у.е. | всего с ошибками, у.е. | обрезано | сбоев |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| короткая постановка | 0.800 | 1.249 | 1.871 | 1.142 | 73.200 | 76.200 | 76.200 | 0.017 | 114.300 | 25.560 | 6000000.000 | 6000025.560 | 0 | 0 |
+| постановка с правилами | 0.800 | 1.185 | 1.727 | 1.112 | 218.200 | 221.200 | 221.200 | 0.046 | 331.800 | 69.060 | 6000000.000 | 6000069.060 | 0 | 0 |
+| правила + рассуждение | 1.000 | 1.809 | 2.897 | 1.808 | 243.200 | 353.600 | 353.600 | 0.137 | 530.400 | 205.440 | 0.000 | 205.440 | 0 | 0 |
+
+Модель deepseek-flash, обращений 5, прогноз на 50000 обращений в день. Время замера 110 с, потрачено взвешенных токенов: 3255.

@@ -1,0 +1,1333 @@
+{
+  "utc": "2026-10-29T13:35:30.922152+00:00",
+  "variant": "solution",
+  "split": "dev",
+  "model": "deepseek-flash",
+  "source_sha256": "b7258dc0232f1cf02e6d2582375495836ca0550a0f3fd72d109cf67b777468da",
+  "metrics": {
+    "разобрано": 1.0,
+    "категория": 1.0,
+    "нужен ли человек": 1.0,
+    "срочность до балла": 1.0
+  },
+  "usage": {
+    "input_tokens": 21960,
+    "output_tokens": 7746,
+    "cache_read_tokens": 136192,
+    "cache_write_tokens": 0,
+    "latency_s": 1353.8635482008103,
+    "cost": 0.01331264,
+    "weighted": 43325.199999999975,
+    "calls": 60,
+    "retries": 2,
+    "cached": 0
+  },
+  "rows": [
+    {
+      "id": "T-001",
+      "text": "Здравствуйте! Пытаюсь оплатить заказ, платёж P-88121 на 1200 р не проходит уже третий раз. Деньги на карте есть. Что не так?",
+      "gold": {
+        "category": "платежи",
+        "severity": 3,
+        "needs_human": false,
+        "payment_ids": [
+          "P-88121"
+        ],
+        "amount": 1200
+      },
+      "actual": {
+        "reasoning": "Сейчас не проходит оплата, единичный платёж.",
+        "category": "платежи",
+        "severity": 3,
+        "needs_human": false,
+        "quote": "Пытаюсь оплатить заказ, платёж P-88121 на 1200 р не проходит уже третий раз.",
+        "payment_ids": [
+          "P-88121"
+        ],
+        "amount": 1200
+      },
+      "error": null
+    },
+    {
+      "id": "T-002",
+      "text": "с меня два раза сняли 3490 за один заказ!!! платежи P-88130 и P-88131. разберитесь",
+      "gold": {
+        "category": "платежи",
+        "severity": 4,
+        "needs_human": false,
+        "payment_ids": [
+          "P-88130",
+          "P-88131"
+        ],
+        "amount": 3490
+      },
+      "actual": {
+        "reasoning": "Повторное списание за один заказ.",
+        "category": "платежи",
+        "severity": 4,
+        "needs_human": false,
+        "quote": "с меня два раза сняли 3490 за один заказ!!! платежи P-88130 и P-88131. разберитесь",
+        "payment_ids": [
+          "P-88130",
+          "P-88131"
+        ],
+        "amount": 3490
+      },
+      "error": null
+    },
+    {
+      "id": "T-004",
+      "text": "Перевёл по СБП 15000 маме час назад, у меня списалось, ей не пришло. Где деньги??",
+      "gold": {
+        "category": "платежи",
+        "severity": 4,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": 15000
+      },
+      "actual": {
+        "reasoning": "Деньги списаны, но не дошли получателю.",
+        "category": "платежи",
+        "severity": 4,
+        "needs_human": false,
+        "quote": "Перевёл по СБП 15000 маме час назад, у меня списалось, ей не пришло. Где деньги??",
+        "payment_ids": [],
+        "amount": 15000
+      },
+      "error": null
+    },
+    {
+      "id": "T-005",
+      "text": "Кто-то оплатил моей картой 22 890 рублей в магазине, в котором я никогда не был. Я ничего не подтверждал! Срочно заблокируйте всё",
+      "gold": {
+        "category": "платежи",
+        "severity": 5,
+        "needs_human": true,
+        "payment_ids": [],
+        "amount": 22890
+      },
+      "actual": {
+        "reasoning": "Несогласованное списание, мошенничество.",
+        "category": "платежи",
+        "severity": 5,
+        "needs_human": true,
+        "quote": "Кто-то оплатил моей картой 22 890 рублей в магазине, в котором я никогда не был. Я ничего не подтверждал! Срочно заблокируйте всё",
+        "payment_ids": [],
+        "amount": 22890
+      },
+      "error": null
+    },
+    {
+      "id": "T-007",
+      "text": "Добрый день. Не могу оплатить подписку 990 руб, смс с кодом не приходит вообще. P-88160",
+      "gold": {
+        "category": "платежи",
+        "severity": 3,
+        "needs_human": false,
+        "payment_ids": [
+          "P-88160"
+        ],
+        "amount": 990
+      },
+      "actual": {
+        "reasoning": "Сейчас нельзя завершить оплату из-за отсутствия кода.",
+        "category": "платежи",
+        "severity": 3,
+        "needs_human": false,
+        "quote": "Не могу оплатить подписку 990 руб, смс с кодом не приходит вообще. P-88160",
+        "payment_ids": [
+          "P-88160"
+        ],
+        "amount": 990
+      },
+      "error": null
+    },
+    {
+      "id": "T-008",
+      "text": "Хочу оплатить 27 000 за курс, отклоняет. Частями платить не хочу. Можете поднять лимит на одну операцию?",
+      "gold": {
+        "category": "платежи",
+        "severity": 3,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": 27000
+      },
+      "actual": {
+        "reasoning": "Сейчас нельзя оплатить, просит поднять лимит.",
+        "category": "платежи",
+        "severity": 3,
+        "needs_human": false,
+        "quote": "Хочу оплатить 27 000 за курс, отклоняет. Частями платить не хочу. Можете поднять лимит на одну операцию?",
+        "payment_ids": [],
+        "amount": 27000
+      },
+      "error": null
+    },
+    {
+      "id": "T-010",
+      "text": "Платёж P-88124 отклонили, потом я повторил и прошло. Первый раз деньги случайно не снялись?",
+      "gold": {
+        "category": "платежи",
+        "severity": 2,
+        "needs_human": false,
+        "payment_ids": [
+          "P-88124"
+        ],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Единичный отказ, затем успех; вопрос о возможном списании.",
+        "category": "платежи",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Платёж P-88124 отклонили, потом я повторил и прошло. Первый раз деньги случайно не снялись?",
+        "payment_ids": [
+          "P-88124"
+        ],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-011",
+      "text": "Ошибся номером при переводе по СБП, отправил 7 500 чужому человеку. Верните перевод!",
+      "gold": {
+        "category": "платежи",
+        "severity": 4,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": 7500
+      },
+      "actual": {
+        "reasoning": "Ошибочный перевод уже ушедших денег.",
+        "category": "платежи",
+        "severity": 4,
+        "needs_human": false,
+        "quote": "Ошибся номером при переводе по СБП, отправил 7 500 чужому человеку. Верните перевод!",
+        "payment_ids": [],
+        "amount": 7500
+      },
+      "error": null
+    },
+    {
+      "id": "T-013",
+      "text": "Карта не проходит в интернет-магазинах, в обычных работает нормально. Последняя попытка P-88123",
+      "gold": {
+        "category": "платежи",
+        "severity": 3,
+        "needs_human": false,
+        "payment_ids": [
+          "P-88123"
+        ],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Отказ оплаты картой в интернете.",
+        "category": "платежи",
+        "severity": 3,
+        "needs_human": false,
+        "quote": "Карта не проходит в интернет-магазинах, в обычных работает нормально. Последняя попытка P-88123",
+        "payment_ids": [
+          "P-88123"
+        ],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-014",
+      "text": "Оплатил через СБП 640 р (P-88200), а в магазине говорят, что не видят оплату",
+      "gold": {
+        "category": "платежи",
+        "severity": 4,
+        "needs_human": false,
+        "payment_ids": [
+          "P-88200"
+        ],
+        "amount": 640
+      },
+      "actual": {
+        "reasoning": "Деньги списаны, но платёж не дошёл до продавца.",
+        "category": "платежи",
+        "severity": 4,
+        "needs_human": false,
+        "quote": "Оплатил через СБП 640 р (P-88200), а в магазине говорят, что не видят оплату",
+        "payment_ids": [
+          "P-88200"
+        ],
+        "amount": 640
+      },
+      "error": null
+    },
+    {
+      "id": "T-016",
+      "text": "не могу оплатить ничего с утра, все платежи отклоняются, в чём дело",
+      "gold": {
+        "category": "платежи",
+        "severity": 3,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Неясная жалоба о текущем отказе оплаты — 3.",
+        "category": "платежи",
+        "severity": 3,
+        "needs_human": false,
+        "quote": "не могу оплатить ничего с утра, все платежи отклоняются, в чём дело",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-017",
+      "text": "Скажите, а до какой суммы можно переводить по СБП без комиссии?",
+      "gold": {
+        "category": "тарифы",
+        "severity": 1,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Вопрос о пороге бесплатных переводов — тарифы.",
+        "category": "тарифы",
+        "severity": 1,
+        "needs_human": false,
+        "quote": "Скажите, а до какой суммы можно переводить по СБП без комиссии?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-019",
+      "text": "Оплатила заказ, деньги ушли, а статус заказа «не оплачен». P-88125, сумма 3300",
+      "gold": {
+        "category": "платежи",
+        "severity": 4,
+        "needs_human": false,
+        "payment_ids": [
+          "P-88125"
+        ],
+        "amount": 3300
+      },
+      "actual": {
+        "reasoning": "Деньги списаны без результата.",
+        "category": "платежи",
+        "severity": 4,
+        "needs_human": false,
+        "quote": "Оплатила заказ, деньги ушли, а статус заказа «не оплачен». P-88125, сумма 3300",
+        "payment_ids": [
+          "P-88125"
+        ],
+        "amount": 3300
+      },
+      "error": null
+    },
+    {
+      "id": "T-020",
+      "text": "Прошу соединить с оператором, бот не помогает. Платёж завис второй день, деньги списаны",
+      "gold": {
+        "category": "платежи",
+        "severity": 4,
+        "needs_human": true,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Деньги списаны без результата, просит человека.",
+        "category": "платежи",
+        "severity": 4,
+        "needs_human": true,
+        "quote": "Прошу соединить с оператором, бот не помогает. Платёж завис второй день, деньги списаны",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-022",
+      "text": "У нас магазин, с 10 утра НИ ОДИН платёж не проходит, клиенты уходят! Тариф Бизнес. Сделайте что-нибудь",
+      "gold": {
+        "category": "платежи",
+        "severity": 5,
+        "needs_human": true,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Полный отказ приёма платежей у продавца.",
+        "category": "платежи",
+        "severity": 5,
+        "needs_human": true,
+        "quote": "с 10 утра НИ ОДИН платёж не проходит, клиенты уходят!",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-023",
+      "text": "Зарезервировали 8700 по платежу P-88140, прошло 5 дней. Когда разблокируют?",
+      "gold": {
+        "category": "платежи",
+        "severity": 2,
+        "needs_human": false,
+        "payment_ids": [
+          "P-88140"
+        ],
+        "amount": 8700
+      },
+      "actual": {
+        "reasoning": "Резерв без сообщения о просрочке — вопрос о статусе.",
+        "category": "платежи",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Зарезервировали 8700 по платежу P-88140, прошло 5 дней. Когда разблокируют?",
+        "payment_ids": [
+          "P-88140"
+        ],
+        "amount": 8700
+      },
+      "error": null
+    },
+    {
+      "id": "T-025",
+      "text": "Можно ли оплатить у вас картой иностранного банка?",
+      "gold": {
+        "category": "платежи",
+        "severity": 1,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Вопрос о допустимых способах оплаты.",
+        "category": "платежи",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Можно ли оплатить у вас картой иностранного банка?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-026",
+      "text": "Третий день не могу пополнить кошелёк, пишет ошибка банка, попробуйте позже",
+      "gold": {
+        "category": "платежи",
+        "severity": 3,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Сейчас нельзя оплатить, деталей мало.",
+        "category": "платежи",
+        "severity": 3,
+        "needs_human": false,
+        "quote": "Третий день не могу пополнить кошелёк, пишет ошибка банка, попробуйте позже",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-028",
+      "text": "Верните 12 900 за платёж P-88150, услугу так и не оказали",
+      "gold": {
+        "category": "возвраты",
+        "severity": 2,
+        "needs_human": true,
+        "payment_ids": [
+          "P-88150"
+        ],
+        "amount": 12900
+      },
+      "actual": {
+        "reasoning": "Просьба оформить возврат по платежу.",
+        "category": "возвраты",
+        "severity": 2,
+        "needs_human": true,
+        "quote": "Верните 12 900 за платёж P-88150, услугу так и не оказали",
+        "payment_ids": [
+          "P-88150"
+        ],
+        "amount": 12900
+      },
+      "error": null
+    },
+    {
+      "id": "T-029",
+      "text": "Возврат оформили 12 рабочих дней назад, денег нет. Сколько можно ждать?",
+      "gold": {
+        "category": "возвраты",
+        "severity": 4,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Просроченный возврат.",
+        "category": "возвраты",
+        "severity": 4,
+        "needs_human": false,
+        "quote": "Возврат оформили 12 рабочих дней назад, денег нет. Сколько можно ждать?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-031",
+      "text": "Продавец отказывается возвращать деньги за бракованный товар, 7 800 руб. Что мне делать?",
+      "gold": {
+        "category": "возвраты",
+        "severity": 2,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": 7800
+      },
+      "actual": {
+        "reasoning": "Отказ продавца, спор через банк; сервис возврат не оформляет.",
+        "category": "возвраты",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Продавец отказывается возвращать деньги за бракованный товар, 7 800 руб. Что мне делать?",
+        "payment_ids": [],
+        "amount": 7800
+      },
+      "error": null
+    },
+    {
+      "id": "T-032",
+      "text": "Деньги вернули, а чек возврата не пришёл",
+      "gold": {
+        "category": "возвраты",
+        "severity": 2,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Возврат уже выполнен, вопрос про чек — статус в пределах срока.",
+        "category": "возвраты",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Деньги вернули, а чек возврата не пришёл",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-034",
+      "text": "Требую вернуть деньги за P-88190, 1750 р. Иначе подаю в суд!",
+      "gold": {
+        "category": "возвраты",
+        "severity": 4,
+        "needs_human": true,
+        "payment_ids": [
+          "P-88190"
+        ],
+        "amount": 1750
+      },
+      "actual": {
+        "reasoning": "Требование возврата с угрозой суда.",
+        "category": "возвраты",
+        "severity": 4,
+        "needs_human": true,
+        "quote": "Требую вернуть деньги за P-88190, 1750 р. Иначе подаю в суд!",
+        "payment_ids": [
+          "P-88190"
+        ],
+        "amount": 1750
+      },
+      "error": null
+    },
+    {
+      "id": "T-035",
+      "text": "Я продавец. Можно ли вернуть покупателю часть суммы, а не всю? Он вернул один товар из трёх",
+      "gold": {
+        "category": "возвраты",
+        "severity": 1,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Вопрос о частичном возврате покупки у продавца.",
+        "category": "возвраты",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Можно ли вернуть покупателю часть суммы, а не всю? Он вернул один товар из трёх",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-037",
+      "text": "Полгода назад оплатил курс, хочу вернуть деньги. Ещё можно?",
+      "gold": {
+        "category": "возвраты",
+        "severity": 2,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Просьба о возврате покупки у продавца; срок не указан как просроченный.",
+        "category": "возвраты",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Полгода назад оплатил курс, хочу вернуть деньги. Ещё можно?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-038",
+      "text": "Оформите возврат 4 990 по P-88141, товар не привезли",
+      "gold": {
+        "category": "возвраты",
+        "severity": 2,
+        "needs_human": false,
+        "payment_ids": [
+          "P-88141"
+        ],
+        "amount": 4990
+      },
+      "actual": {
+        "reasoning": "Новый возврат покупки через сервис.",
+        "category": "возвраты",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Оформите возврат 4 990 по P-88141, товар не привезли",
+        "payment_ids": [
+          "P-88141"
+        ],
+        "amount": 4990
+      },
+      "error": null
+    },
+    {
+      "id": "T-040",
+      "text": "Банк говорит, что возврата от вас не было, а вы говорите, что отправили. Кому верить? Жду три недели",
+      "gold": {
+        "category": "возвраты",
+        "severity": 4,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Просроченный возврат, спор о статусе.",
+        "category": "возвраты",
+        "severity": 4,
+        "needs_human": false,
+        "quote": "Банк говорит, что возврата от вас не было, а вы говорите, что отправили. Кому верить? Жду три недели",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-041",
+      "text": "Как отменить возврат? Оформил по ошибке не тому покупателю",
+      "gold": {
+        "category": "возвраты",
+        "severity": 2,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Отмена уже оформленного возврата — вопрос по возвратам, не новый возврат.",
+        "category": "возвраты",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Как отменить возврат? Оформил по ошибке не тому покупателю",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-043",
+      "text": "Не могу войти, пишет аккаунт заблокирован на 30 минут. Мне срочно нужно оплатить",
+      "gold": {
+        "category": "доступ",
+        "severity": 3,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Сейчас нельзя войти, блокировка аккаунта.",
+        "category": "доступ",
+        "severity": 3,
+        "needs_human": false,
+        "quote": "Не могу войти, пишет аккаунт заблокирован на 30 минут. Мне срочно нужно оплатить",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-044",
+      "text": "Забыл пароль, письмо для сброса не приходит",
+      "gold": {
+        "category": "доступ",
+        "severity": 3,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Проблема входа, сброс пароля.",
+        "category": "доступ",
+        "severity": 3,
+        "needs_human": false,
+        "quote": "Забыл пароль, письмо для сброса не приходит",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-046",
+      "text": "Мне пришло смс с кодом для входа, но я не входил! Кто-то ломает мой аккаунт?",
+      "gold": {
+        "category": "доступ",
+        "severity": 5,
+        "needs_human": true,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Подозрение на взлом аккаунта, доступ.",
+        "category": "доступ",
+        "severity": 5,
+        "needs_human": true,
+        "quote": "Мне пришло смс с кодом для входа, но я не входил! Кто-то ломает мой аккаунт?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-047",
+      "text": "Как включить вход по отпечатку пальца?",
+      "gold": {
+        "category": "доступ",
+        "severity": 1,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Справочный вопрос о настройке входа.",
+        "category": "доступ",
+        "severity": 1,
+        "needs_human": false,
+        "quote": "Как включить вход по отпечатку пальца?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-049",
+      "text": "Купил новый телефон, приложение не пускает без кода, а код не приходит",
+      "gold": {
+        "category": "доступ",
+        "severity": 3,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Проблема со входом и вторым фактором.",
+        "category": "доступ",
+        "severity": 3,
+        "needs_human": false,
+        "quote": "приложение не пускает без кода, а код не приходит",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-050",
+      "text": "Проверка личности идёт уже 4 дня, обещали 2. Счёт заморожен, у меня бизнес стоит!",
+      "gold": {
+        "category": "доступ",
+        "severity": 4,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Блокировка доступа/счёта из-за проверки личности.",
+        "category": "доступ",
+        "severity": 3,
+        "needs_human": false,
+        "quote": "Проверка личности идёт уже 4 дня, обещали 2. Счёт заморожен, у меня бизнес стоит!",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-052",
+      "text": "В аккаунте сменили пароль и почту, это был не я! Верните доступ, там деньги",
+      "gold": {
+        "category": "доступ",
+        "severity": 5,
+        "needs_human": true,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Взлом аккаунта, несогласованное изменение данных.",
+        "category": "доступ",
+        "severity": 5,
+        "needs_human": true,
+        "quote": "В аккаунте сменили пароль и почту, это был не я! Верните доступ, там деньги",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-053",
+      "text": "Как добавить сотрудника в кабинет продавца с ограниченными правами?",
+      "gold": {
+        "category": "доступ",
+        "severity": 1,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Права сотрудников — доступ.",
+        "category": "доступ",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Как добавить сотрудника в кабинет продавца с ограниченными правами?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-055",
+      "text": "Дайте живого человека, я третий раз объясняю про смену номера!",
+      "gold": {
+        "category": "доступ",
+        "severity": 3,
+        "needs_human": true,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Просьба оператора по вопросу доступа.",
+        "category": "доступ",
+        "severity": 2,
+        "needs_human": true,
+        "quote": "Дайте живого человека, я третий раз объясняю про смену номера!",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-056",
+      "text": "Приложение вылетает при входе после обновления",
+      "gold": {
+        "category": "доступ",
+        "severity": 3,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Проблема со входом в приложение.",
+        "category": "доступ",
+        "severity": 3,
+        "needs_human": false,
+        "quote": "Приложение вылетает при входе после обновления",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-058",
+      "text": "Хочу перейти со Старта на Бизнес. Когда заработает новый тариф, если подам заявку сегодня, 27-го?",
+      "gold": {
+        "category": "тарифы",
+        "severity": 2,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Смена тарифа, обычный вопрос.",
+        "category": "тарифы",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Хочу перейти со Старта на Бизнес. Когда заработает новый тариф, если подам заявку сегодня, 27-го?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-059",
+      "text": "Вывод выручки не пришёл, тариф Бизнес, платежи были вчера до обеда",
+      "gold": {
+        "category": "тарифы",
+        "severity": 4,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Просроченный вывод выручки.",
+        "category": "тарифы",
+        "severity": 4,
+        "needs_human": false,
+        "quote": "Вывод выручки не пришёл, тариф Бизнес, платежи были вчера до обеда",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-061",
+      "text": "За что абонентская плата 990, если я почти не принимаю платежи? Можно без неё?",
+      "gold": {
+        "category": "тарифы",
+        "severity": 2,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Вопрос об абонплате и тарифе.",
+        "category": "тарифы",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "За что абонентская плата 990, если я почти не принимаю платежи? Можно без неё?",
+        "payment_ids": [],
+        "amount": 990
+      },
+      "error": null
+    },
+    {
+      "id": "T-062",
+      "text": "Сколько стоит приём оплаты по СБП для магазина?",
+      "gold": {
+        "category": "тарифы",
+        "severity": 1,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Вопрос о комиссии — тарифы.",
+        "category": "тарифы",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Сколько стоит приём оплаты по СБП для магазина?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-064",
+      "text": "Выводите ли вы деньги в выходные на тарифе Старт?",
+      "gold": {
+        "category": "тарифы",
+        "severity": 1,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Вопрос о сроках вывода выручки — тарифы.",
+        "category": "тарифы",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Выводите ли вы деньги в выходные на тарифе Старт?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-065",
+      "text": "Хочу понизить тариф с Про на Бизнес, в прошлом месяце уже менял. Получится?",
+      "gold": {
+        "category": "тарифы",
+        "severity": 2,
+        "needs_human": true,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Смена тарифа, продавец на Про.",
+        "category": "тарифы",
+        "severity": 2,
+        "needs_human": true,
+        "quote": "Хочу понизить тариф с Про на Бизнес, в прошлом месяце уже менял. Получится?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-067",
+      "text": "Вывод вернулся, пишут неверные реквизиты. Когда деньги вернутся на баланс?",
+      "gold": {
+        "category": "тарифы",
+        "severity": 2,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Статус возврата вывода, срок в пределах нормы.",
+        "category": "тарифы",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Вывод вернулся, пишут неверные реквизиты. Когда деньги вернутся на баланс?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-068",
+      "text": "Есть ли у вас скидки на комиссию при большом обороте?",
+      "gold": {
+        "category": "тарифы",
+        "severity": 1,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Вопрос о комиссии — тарифы.",
+        "category": "тарифы",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Есть ли у вас скидки на комиссию при большом обороте?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-070",
+      "text": "Получаем 429 от API при 50 запросах в секунду, хотя лимит 100. Ключ боевой",
+      "gold": {
+        "category": "интеграция",
+        "severity": 3,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Вопрос по лимитам API, единичные ошибки, не полный отказ.",
+        "category": "интеграция",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Получаем 429 от API при 50 запросах в секунду, хотя лимит 100. Ключ боевой",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-071",
+      "text": "Как проверить подпись уведомления? Какой алгоритм?",
+      "gold": {
+        "category": "интеграция",
+        "severity": 1,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Справочный вопрос по интеграции.",
+        "category": "интеграция",
+        "severity": 1,
+        "needs_human": false,
+        "quote": "Как проверить подпись уведомления? Какой алгоритм?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-073",
+      "text": "При повторной отправке запроса на возврат создаётся второй возврат. Как от этого защититься?",
+      "gold": {
+        "category": "интеграция",
+        "severity": 2,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Вопрос об идемпотентности API, не о конкретном возврате.",
+        "category": "интеграция",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "При повторной отправке запроса на возврат создаётся второй возврат. Как от этого защититься?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-074",
+      "text": "API возвращает 500 на создание платежа, все запросы, уже 20 минут. Тариф Про",
+      "gold": {
+        "category": "интеграция",
+        "severity": 5,
+        "needs_human": true,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Все запросы создания платежа падают — полный отказ приёма.",
+        "category": "интеграция",
+        "severity": 5,
+        "needs_human": true,
+        "quote": "API возвращает 500 на создание платежа, все запросы, уже 20 минут. Тариф Про",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-076",
+      "text": "Как через API настроить отправку чеков по СМС вместо почты?",
+      "gold": {
+        "category": "интеграция",
+        "severity": 1,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Справочный вопрос по API.",
+        "category": "интеграция",
+        "severity": 1,
+        "needs_human": false,
+        "quote": "Как через API настроить отправку чеков по СМС вместо почты?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-077",
+      "text": "Статус платежа в API completed, а уведомление пришло с authorized и больше ничего. Это баг?",
+      "gold": {
+        "category": "интеграция",
+        "severity": 2,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Расхождение статуса и уведомления в API.",
+        "category": "интеграция",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Статус платежа в API completed, а уведомление пришло с authorized и больше ничего. Это баг?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-079",
+      "text": "Подскажите, есть ли у вас SDK для Python?",
+      "gold": {
+        "category": "интеграция",
+        "severity": 1,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Справочный вопрос по интеграции.",
+        "category": "интеграция",
+        "severity": 1,
+        "needs_human": false,
+        "quote": "Подскажите, есть ли у вас SDK для Python?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-080",
+      "text": "Уведомление приходит по 3–4 раза на один платёж, это нормально?",
+      "gold": {
+        "category": "интеграция",
+        "severity": 2,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Вопрос о дублировании вебхуков, не о списаниях.",
+        "category": "интеграция",
+        "severity": 2,
+        "needs_human": false,
+        "quote": "Уведомление приходит по 3–4 раза на один платёж, это нормально?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-082",
+      "text": "Предлагаю добавить тёмную тему в приложение",
+      "gold": {
+        "category": "другое",
+        "severity": 1,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Предложение, не по существу поддержки.",
+        "category": "другое",
+        "severity": 1,
+        "needs_human": false,
+        "quote": "Предлагаю добавить тёмную тему в приложение",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-083",
+      "text": "Вы принимаете на работу стажёров-аналитиков?",
+      "gold": {
+        "category": "другое",
+        "severity": 1,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Не по адресу.",
+        "category": "другое",
+        "severity": 1,
+        "needs_human": false,
+        "quote": "Вы принимаете на работу стажёров-аналитиков?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-085",
+      "text": "Мне пришло письмо с адреса lira-support.example.net с просьбой подтвердить карту. Это вы?",
+      "gold": {
+        "category": "другое",
+        "severity": 2,
+        "needs_human": true,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Проверка подлинности письма без факта операции.",
+        "category": "другое",
+        "severity": 2,
+        "needs_human": true,
+        "quote": "Мне пришло письмо с адреса lira-support.example.net с просьбой подтвердить карту. Это вы?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-086",
+      "text": "До скольки работает телефон поддержки?",
+      "gold": {
+        "category": "другое",
+        "severity": 1,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Справочный вопрос не по теме сервиса.",
+        "category": "другое",
+        "severity": 1,
+        "needs_human": false,
+        "quote": "До скольки работает телефон поддержки?",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-088",
+      "text": "аааа всё сломалось ничего не работает",
+      "gold": {
+        "category": "другое",
+        "severity": 3,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Неясная жалоба о текущем отказе работы.",
+        "category": "другое",
+        "severity": 3,
+        "needs_human": false,
+        "quote": "аааа всё сломалось ничего не работает",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    },
+    {
+      "id": "T-089",
+      "text": "Отпишите меня от рекламных рассылок",
+      "gold": {
+        "category": "другое",
+        "severity": 2,
+        "needs_human": false,
+        "payment_ids": [],
+        "amount": null
+      },
+      "actual": {
+        "reasoning": "Не по адресу, рассылки.",
+        "category": "другое",
+        "severity": 1,
+        "needs_human": false,
+        "quote": "Отпишите меня от рекламных рассылок",
+        "payment_ids": [],
+        "amount": null
+      },
+      "error": null
+    }
+  ]
+}

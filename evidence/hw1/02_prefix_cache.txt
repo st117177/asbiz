@@ -1,0 +1,16 @@
+| где метка | попытка | входных без кэша | из кэша | ответ |
+|---|---|---|---|---|
+SAVED response 02_prefix_cache weighted total: 1613
+| start | 1 | 931 | 0 | доступ |
+SAVED response 02_prefix_cache weighted total: 2546
+| start | 2 | 931 | 0 | доступ |
+SAVED response 02_prefix_cache weighted total: 3479
+| start | 3 | 931 | 0 | доступ |
+SAVED response 02_prefix_cache weighted total: 4412
+| end | 1 | 931 | 0 | доступ |
+SAVED response 02_prefix_cache weighted total: 4654
+| end | 2 | 163 | 768 | доступ |
+SAVED response 02_prefix_cache weighted total: 4896
+| end | 3 | 163 | 768 | доступ |
+
+потрачено взвешенных токенов: 4216

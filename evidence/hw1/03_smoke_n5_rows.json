@@ -1,0 +1,389 @@
+[
+  {
+    "candidate": "короткая постановка",
+    "ids": [
+      "T-082",
+      "T-037",
+      "T-073",
+      "T-085",
+      "T-040"
+    ],
+    "results": [
+      {
+        "id": "T-082",
+        "ok": true,
+        "failed": false,
+        "truncated": false,
+        "latency_s": 1.5593754001893103,
+        "ttft_s": 1.477917600190267,
+        "usage": {
+          "input_tokens": 62,
+          "output_tokens": 3,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "latency_s": 1.5593754001893103,
+          "cost": 1.48e-05,
+          "weighted": 65.0,
+          "calls": 1,
+          "retries": 0,
+          "cached": 0
+        }
+      },
+      {
+        "id": "T-037",
+        "ok": true,
+        "failed": false,
+        "truncated": false,
+        "latency_s": 1.163777699926868,
+        "ttft_s": 1.0530485999770463,
+        "usage": {
+          "input_tokens": 69,
+          "output_tokens": 3,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "latency_s": 1.163777699926868,
+          "cost": 1.6200000000000004e-05,
+          "weighted": 72.0,
+          "calls": 1,
+          "retries": 0,
+          "cached": 0
+        }
+      },
+      {
+        "id": "T-073",
+        "ok": false,
+        "failed": false,
+        "truncated": false,
+        "latency_s": 1.0643089001532644,
+        "ttft_s": 0.9484192000236362,
+        "usage": {
+          "input_tokens": 74,
+          "output_tokens": 3,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "latency_s": 1.0643089001532644,
+          "cost": 1.72e-05,
+          "weighted": 77.0,
+          "calls": 1,
+          "retries": 0,
+          "cached": 0
+        }
+      },
+      {
+        "id": "T-085",
+        "ok": true,
+        "failed": false,
+        "truncated": false,
+        "latency_s": 1.2493320999201387,
+        "ttft_s": 1.142404800048098,
+        "usage": {
+          "input_tokens": 78,
+          "output_tokens": 3,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "latency_s": 1.2493320999201387,
+          "cost": 1.8e-05,
+          "weighted": 81.0,
+          "calls": 1,
+          "retries": 0,
+          "cached": 0
+        }
+      },
+      {
+        "id": "T-040",
+        "ok": true,
+        "failed": false,
+        "truncated": false,
+        "latency_s": 1.8709805000107735,
+        "ttft_s": 1.7299025000538677,
+        "usage": {
+          "input_tokens": 83,
+          "output_tokens": 3,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "latency_s": 1.8709805000107735,
+          "cost": 1.9e-05,
+          "weighted": 86.0,
+          "calls": 1,
+          "retries": 0,
+          "cached": 0
+        }
+      }
+    ],
+    "summary": {
+      "кандидат": "короткая постановка",
+      "точность": 0.8,
+      "p50, с": 1.2493320999201387,
+      "p95, с": 1.8709805000107735,
+      "первый токен p50, с": 1.142404800048098,
+      "входных на обращение": 73.2,
+      "токенов на обращение": 76.2,
+      "взвешенных на обращение": 76.2,
+      "цена за 1000, у.е.": 0.017040000000000003,
+      "взвешенных в месяц, млн": 114.3,
+      "цена в месяц, у.е.": 25.560000000000006,
+      "ошибки в месяц, у.е.": 5999999.999999999,
+      "всего с ошибками, у.е.": 6000025.559999999,
+      "обрезано": 0,
+      "сбоев": 0
+    }
+  },
+  {
+    "candidate": "постановка с правилами",
+    "ids": [
+      "T-082",
+      "T-037",
+      "T-073",
+      "T-085",
+      "T-040"
+    ],
+    "results": [
+      {
+        "id": "T-082",
+        "ok": true,
+        "failed": false,
+        "truncated": false,
+        "latency_s": 1.726538399932906,
+        "ttft_s": 1.5816554999910295,
+        "usage": {
+          "input_tokens": 207,
+          "output_tokens": 3,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "latency_s": 1.726538399932906,
+          "cost": 4.380000000000001e-05,
+          "weighted": 210.0,
+          "calls": 1,
+          "retries": 0,
+          "cached": 0
+        }
+      },
+      {
+        "id": "T-037",
+        "ok": true,
+        "failed": false,
+        "truncated": false,
+        "latency_s": 1.2997272000648081,
+        "ttft_s": 1.1136209999676794,
+        "usage": {
+          "input_tokens": 214,
+          "output_tokens": 3,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "latency_s": 1.2997272000648081,
+          "cost": 4.52e-05,
+          "weighted": 217.0,
+          "calls": 1,
+          "retries": 0,
+          "cached": 0
+        }
+      },
+      {
+        "id": "T-073",
+        "ok": false,
+        "failed": false,
+        "truncated": false,
+        "latency_s": 1.1850219001062214,
+        "ttft_s": 1.111792700132355,
+        "usage": {
+          "input_tokens": 219,
+          "output_tokens": 3,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "latency_s": 1.1850219001062214,
+          "cost": 4.6200000000000005e-05,
+          "weighted": 222.0,
+          "calls": 1,
+          "retries": 0,
+          "cached": 0
+        }
+      },
+      {
+        "id": "T-085",
+        "ok": true,
+        "failed": false,
+        "truncated": false,
+        "latency_s": 0.7920890999957919,
+        "ttft_s": 0.6176207999233156,
+        "usage": {
+          "input_tokens": 223,
+          "output_tokens": 3,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "latency_s": 0.7920890999957919,
+          "cost": 4.7e-05,
+          "weighted": 226.0,
+          "calls": 1,
+          "retries": 0,
+          "cached": 0
+        }
+      },
+      {
+        "id": "T-040",
+        "ok": true,
+        "failed": false,
+        "truncated": false,
+        "latency_s": 1.158206099877134,
+        "ttft_s": 1.0918264999054372,
+        "usage": {
+          "input_tokens": 228,
+          "output_tokens": 3,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "latency_s": 1.158206099877134,
+          "cost": 4.8e-05,
+          "weighted": 231.0,
+          "calls": 1,
+          "retries": 0,
+          "cached": 0
+        }
+      }
+    ],
+    "summary": {
+      "кандидат": "постановка с правилами",
+      "точность": 0.8,
+      "p50, с": 1.1850219001062214,
+      "p95, с": 1.726538399932906,
+      "первый токен p50, с": 1.111792700132355,
+      "входных на обращение": 218.2,
+      "токенов на обращение": 221.2,
+      "взвешенных на обращение": 221.2,
+      "цена за 1000, у.е.": 0.04604,
+      "взвешенных в месяц, млн": 331.8,
+      "цена в месяц, у.е.": 69.06,
+      "ошибки в месяц, у.е.": 5999999.999999999,
+      "всего с ошибками, у.е.": 6000069.059999999,
+      "обрезано": 0,
+      "сбоев": 0
+    }
+  },
+  {
+    "candidate": "правила + рассуждение",
+    "ids": [
+      "T-082",
+      "T-037",
+      "T-073",
+      "T-085",
+      "T-040"
+    ],
+    "results": [
+      {
+        "id": "T-082",
+        "ok": true,
+        "failed": false,
+        "truncated": false,
+        "latency_s": 1.807843399932608,
+        "ttft_s": 1.807693999959156,
+        "usage": {
+          "input_tokens": 232,
+          "output_tokens": 55,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "latency_s": 1.807843399932608,
+          "cost": 9.04e-05,
+          "weighted": 287.0,
+          "calls": 1,
+          "retries": 0,
+          "cached": 0
+        }
+      },
+      {
+        "id": "T-037",
+        "ok": true,
+        "failed": false,
+        "truncated": false,
+        "latency_s": 1.8088308000005782,
+        "ttft_s": 1.7836405001580715,
+        "usage": {
+          "input_tokens": 239,
+          "output_tokens": 44,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "latency_s": 1.8088308000005782,
+          "cost": 8.3e-05,
+          "weighted": 283.0,
+          "calls": 1,
+          "retries": 0,
+          "cached": 0
+        }
+      },
+      {
+        "id": "T-073",
+        "ok": true,
+        "failed": false,
+        "truncated": false,
+        "latency_s": 2.896553800208494,
+        "ttft_s": 2.8690270001534373,
+        "usage": {
+          "input_tokens": 244,
+          "output_tokens": 297,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "latency_s": 2.896553800208494,
+          "cost": 0.0002864,
+          "weighted": 541.0,
+          "calls": 1,
+          "retries": 0,
+          "cached": 0
+        }
+      },
+      {
+        "id": "T-085",
+        "ok": true,
+        "failed": false,
+        "truncated": false,
+        "latency_s": 2.241157300071791,
+        "ttft_s": 2.2136724998708814,
+        "usage": {
+          "input_tokens": 248,
+          "output_tokens": 107,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "latency_s": 2.241157300071791,
+          "cost": 0.0001352,
+          "weighted": 355.0,
+          "calls": 1,
+          "retries": 0,
+          "cached": 0
+        }
+      },
+      {
+        "id": "T-040",
+        "ok": true,
+        "failed": false,
+        "truncated": false,
+        "latency_s": 1.4341634998563677,
+        "ttft_s": 1.4341589000541717,
+        "usage": {
+          "input_tokens": 253,
+          "output_tokens": 49,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "latency_s": 1.4341634998563677,
+          "cost": 8.980000000000001e-05,
+          "weighted": 302.0,
+          "calls": 1,
+          "retries": 0,
+          "cached": 0
+        }
+      }
+    ],
+    "summary": {
+      "кандидат": "правила + рассуждение",
+      "точность": 1.0,
+      "p50, с": 1.8088308000005782,
+      "p95, с": 2.896553800208494,
+      "первый токен p50, с": 1.807693999959156,
+      "входных на обращение": 243.2,
+      "токенов на обращение": 353.6,
+      "взвешенных на обращение": 353.6,
+      "цена за 1000, у.е.": 0.13696000000000003,
+      "взвешенных в месяц, млн": 530.4,
+      "цена в месяц, у.е.": 205.44000000000003,
+      "ошибки в месяц, у.е.": 0.0,
+      "всего с ошибками, у.е.": 205.44000000000003,
+      "обрезано": 0,
+      "сбоев": 0
+    }
+  }
+]
